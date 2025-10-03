@@ -13,7 +13,7 @@ Small desktop weather app using Electron as the shell and an Express + EJS serve
 - Optional: Windows build tools when packaging for Windows
 
 ## Install
-1. Clone the repo into `d:\vscode\web\weather-app` (or your preferred folder).
+1. Clone the repo.
 2. From the project root run:
    npm install
 
