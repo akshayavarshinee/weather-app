@@ -1,0 +1,183 @@
+.lilita-one-regular {
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fira-sans-light {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.fira-sans-regular {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #68BBE3;
+}
+
+input, button{
+    font-size: 14px;
+    color: #0D4C92;
+}
+
+h1{
+    margin-bottom: 5px;
+    font-size: 32px;
+    color: #ffe26f;
+}
+
+.city{
+    margin: 0 10px;
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+    color: black;
+}
+
+.submit{
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    width: max-content;
+    background-color: #0D4C92;
+    color: #CFF5E7;
+}
+
+form, .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 90%;
+}
+
+form {
+    gap: 10px;
+    margin: 0;
+    padding-top: 0;
+}
+
+.card {
+    margin-top: 0px;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 6px; /* further reduce padding */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 0px;
+    padding-top: 0; /* ensure no extra top padding */
+    width: 90%;
+}
+
+.container h1{
+    width: 100%;
+    font-size: 28px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.card img{
+    margin-left: auto; 
+    position: relative;
+    top: 5px;
+    height: 90px;
+    width: 90px;
+}
+
+.card p{
+    font-size: 16px;
+    margin: 0;
+}
+
+/* red border for the errored field */
+.city.is-error {
+  border: 2px solid #e54848;
+}
+
+/* red placeholder text */
+.city.is-error::placeholder {
+  color: #e54848;
+}
+
+.search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 8px; /* reduced padding */
+    max-width: 290px;
+    width: 90%;
+    background: white;
+    border-radius: 50px;
+    margin: 12px auto 0 auto; /* reduced top margin */
+    box-sizing: border-box;
+}
+
+
+.search input {
+    border: none;
+    border-radius: 50px;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: black;
+    flex: 1;
+    margin-right: 8px;
+    outline: none;
+    background: transparent;
+    min-width: 0;
+}
+
+
+.search button{
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    height: 36px;
+    width: 36px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 0;
+}
+
+.search img{
+    height: 22px;
+    width: 22px;
+}
+
+.result{
+    display: flex;
+    flex-direction: column;
+    gap: 2px; /* further reduced gap */
+    padding: 0;
+    width: 100%;
+    align-items: center;
+}
+
+
+
+
+

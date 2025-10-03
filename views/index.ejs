@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel = "stylesheet" href="/style.css">
+    <title>Weather App</title>
+</head>
+<body>
+
+    <% if(!locals.data) {%>
+        <h1 class = "lilita-one-regular">Weather</h1>
+        <form action="/submit" method="POST">
+            <input
+            type="text"
+            name="city"
+            class="city <%= locals.error ? 'is-error' : '' %>"
+            required
+            value="<%= locals.city || '' %>"
+            placeholder="<%= locals.error ? locals.error : 'Enter a city' %>"
+            aria-invalid="<%= !!locals.error %>"
+            />
+            <button class="submit lilita-one-regular">Get Weather</button>
+        </form>
+        <a href="https://www.flaticon.com/free-icons/sun" title="sun icons" style="text-decoration: none; font-size: 10px; color: black" class= "fira-sans-light">Icon created by iconixar - Flaticon</a>
+    <% } else { %>
+        <div class = "result">
+            <form class="search" action="/submit" method="POST">
+                <input 
+                type="text" 
+                name="city" 
+                value="<%= locals.city || '' %>"
+                placeholder="<%= locals.error ? locals.error : "Search for another city"  %>"
+                aria-invalid="<%= !!locals.error %>"
+                required />
+                <button type="submit"><img src="/search.png"></button>
+            </form>
+
+            <div class="card">
+                <div class = "container">
+                    <h1 class = "lilita-one-regular"><%= data.name %>, <%= data.sys.country %></h1>
+                    <img src="https://openweathermap.org/img/wn/<%= data.weather[0].icon %>@2x.png" alt="weather icon" / >
+                </div>
+                <p class = "fira-sans-light"><%= data.weather[0].description.charAt(0).toUpperCase() + data.weather[0].description.slice(1) %></p>
+                <p class = "fira-sans-light">Temperature: <%= data.main.temp %>°C</p>
+                <p class = "fira-sans-light">Feels like: <%= data.main.feels_like %>°C</p>
+                <p class = "fira-sans-light">Max: <%= data.main.temp_max %>°C   Min: <%= data.main.temp_min %>°C</p>
+            </div>
+        </div>    
+    <% } %>
+
+
+</body>
+</html>
